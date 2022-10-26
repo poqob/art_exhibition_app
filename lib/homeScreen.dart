@@ -29,9 +29,9 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              OButton(1, context),
-              OButton(2, context),
-              OButton(3, context),
+              oButton(1, context),
+              oButton(2, context),
+              oButton(3, context),
             ],
           ),
         ),
@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-Widget OButton(int index, BuildContext context) {
+Widget oButton(int index, BuildContext context) {
   return Padding(
     padding: const EdgeInsets.all(12.0),
     child: OutlinedButton(
@@ -55,15 +55,41 @@ Widget OButton(int index, BuildContext context) {
         side: const BorderSide(
             color: Colors.white, style: BorderStyle.solid, width: 2.0),
       ),
-      onPressed: () {
+      onPressed: () async {
+        String a = await queries(index);
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text(index.toString()),
+            content: Image.network(a),
+            backgroundColor: Colors.amber,
+            title: Text("$index numara"),
+            titleTextStyle: const TextStyle(
+                fontStyle: FontStyle.italic,
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+                color: Colors.black),
           ),
         );
       },
       child: Text("buton $index"),
     ),
   );
+}
+
+//queries to database according to index numbers that db has serial.
+Future<String> queries(int queryNum) async {
+  var connection = PostgreSQLConnection("localhost", 5432, "postgres",
+      username: "dart", password: "123456");
+  await connection.open();
+/*
+  List<List<dynamic>> results = await connection
+      .query("UPDATE demo SET url='www.yucemaymun.epizy.com'WHERE id=3 ");
+  await connection.query(
+      "UPDATE demo SET purl='https://knowyourmeme.com/memes/return-to-monke' WHERE id=3");
+*/
+  List<List<dynamic>> results = await connection.query('''
+  SELECT * FROM demo WHERE id=$queryNum
+''');
+  await connection.close();
+  return results[0][1].toString();
 }
