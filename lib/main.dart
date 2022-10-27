@@ -1,3 +1,4 @@
+import 'package:art_exhibition_app/pages/auth/LogInPage.dart';
 import 'package:flutter/material.dart';
 import 'pages/homePage/homeScreen.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: const MyHomePage(title: 'vtys'),
+      home: const LogInPage(), //const MyHomePage(title: 'vtys'),
     );
   }
 }
