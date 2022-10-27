@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:postgres/postgres.dart';
-import 'homeScreen.dart';
+import 'pages/homePage/homeScreen.dart';
 
 void main() {
   runApp(const MyApp());
