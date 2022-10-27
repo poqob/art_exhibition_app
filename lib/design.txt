@@ -1,0 +1,17 @@
+pages:
+splashPage,
+
+loginPage,
+signUpPage,
+
+optionsPage,
+userInformationPage,
+
+homePage,
+savedContentPage,
+contentPaintsPage,
+contentStatuesPage,
+
+
+...in utils, will have app's color mode.(Dark-Light)
+

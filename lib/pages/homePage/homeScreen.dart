@@ -9,14 +9,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,11 +28,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
@@ -81,12 +68,7 @@ Future<String> queries(int queryNum) async {
   var connection = PostgreSQLConnection("localhost", 5432, "postgres",
       username: "dart", password: "123456");
   await connection.open();
-/*
-  List<List<dynamic>> results = await connection
-      .query("UPDATE demo SET url='www.yucemaymun.epizy.com'WHERE id=3 ");
-  await connection.query(
-      "UPDATE demo SET purl='https://knowyourmeme.com/memes/return-to-monke' WHERE id=3");
-*/
+
   List<List<dynamic>> results = await connection.query('''
   SELECT * FROM demo WHERE id=$queryNum
 ''');
