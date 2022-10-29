@@ -1,6 +1,5 @@
-import 'package:art_exhibition_app/pages/auth/LogInPage.dart';
+import 'package:art_exhibition_app/pages/startScreen/StartScreen.dart';
 import 'package:flutter/material.dart';
-import 'pages/homePage/homeScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,10 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      theme: ThemeData(
-        primarySwatch: Colors.orange,
-      ),
-      home: const LogInPage(), //const MyHomePage(title: 'vtys'),
+      color: Colors.black,
+      theme: ThemeData(appBarTheme: const AppBarTheme(color: Colors.black)),
+      home: const SliverAppBarExample(),
     );
   }
 }
