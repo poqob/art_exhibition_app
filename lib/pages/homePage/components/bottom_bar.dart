@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MyBottomBar extends StatelessWidget {
   final int index;
   final Function(int?) onTap;
-  MyBottomBar({
+  const MyBottomBar({
     Key? key,
     required this.index,
     required this.onTap,

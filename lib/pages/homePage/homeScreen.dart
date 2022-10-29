@@ -3,19 +3,23 @@ import 'package:art_exhibition_app/pages/homePage/components/temp_button.dart';
 import 'package:art_exhibition_app/pages/homePage/util/glass_box.dart';
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class FlowPage extends StatefulWidget {
+  const FlowPage({Key? key, required this.title}) : super(key: key);
   final String title;
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<FlowPage> createState() => _FlowPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _FlowPageState extends State<FlowPage> {
   // bottom bar navigation
   int _currentBottomIndex = 0;
   void _handleIndexChanged(int? index) {
+    String route = "bbr" + index.toString();
     setState(() {
       _currentBottomIndex = index!;
+      index != 0
+          ? Navigator.of(context).pushNamed(route)
+          : Navigator.of(context).popAndPushNamed(route);
     });
   }
 
