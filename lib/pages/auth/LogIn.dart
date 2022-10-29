@@ -1,4 +1,4 @@
-import 'package:art_exhibition_app/utils/TextFields.dart';
+import 'package:art_exhibition_app/pages/startScreen/util/textFields.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 

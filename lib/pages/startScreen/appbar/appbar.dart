@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:art_exhibition_app/pages/startScreen/appbar/appBarImageChanger.dart';
+import 'package:art_exhibition_app/pages/startScreen/util/appBarImageChanger.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
