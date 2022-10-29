@@ -19,7 +19,7 @@ class _SignUpState extends State<SignUp> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Lottie.network(
-                'https://assets5.lottiefiles.com/packages/lf20_wnpcfdk3.json'),
+                'https://assets6.lottiefiles.com/packages/lf20_1t8na1gy.json'),
             const TextInput(hintTextt: 'user name', suffixTextt: 'welcome'),
             const TextInput(
               hintTextt: 'password',
