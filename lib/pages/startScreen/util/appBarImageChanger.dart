@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
 String func(int inc) {
   switch (inc % 3) {
     case 0:

@@ -1,33 +1,16 @@
-import 'package:art_exhibition_app/pages/startScreen/util/textFields.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class SignUp extends StatefulWidget {
-  const SignUp({Key? key}) : super(key: key);
+class Signup extends StatefulWidget {
+  const Signup({Key? key}) : super(key: key);
 
   @override
-  State<SignUp> createState() => _SignUpState();
+  State<Signup> createState() => _SignupState();
 }
 
-class _SignUpState extends State<SignUp> {
+class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Lottie.network(
-                'https://assets6.lottiefiles.com/packages/lf20_1t8na1gy.json'),
-            const TextInput(hintTextt: 'user name', suffixTextt: 'welcome'),
-            const TextInput(
-              hintTextt: 'password',
-              isObsecure: true,
-            ),
-          ],
-        ),
-      ),
-    );
+    return Scaffold();
   }
 }

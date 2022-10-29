@@ -1,7 +1,6 @@
 import 'package:art_exhibition_app/pages/auth/LogIn.dart';
-import 'package:art_exhibition_app/pages/auth/SignUp.dart';
+import 'package:art_exhibition_app/pages/startScreen/routeSection.dart';
 import 'package:art_exhibition_app/pages/startScreen/appbar/appbar.dart';
-import 'package:art_exhibition_app/pages/startScreen/util/appBarImageChanger.dart';
 import 'package:art_exhibition_app/pages/startScreen/util/buttonO.dart';
 import 'package:flutter/material.dart';
 import 'package:art_exhibition_app/utils/Todo.dart';
@@ -19,8 +18,6 @@ class SliverAppBarExample extends StatefulWidget {
   State<SliverAppBarExample> createState() => _SliverAppBarExampleState();
 }
 
-@Todo('''login and signup section's position will be stored in a variable.
- login and signup buttons will have got that information for scrolling the page''')
 class _SliverAppBarExampleState extends State<SliverAppBarExample> {
   @override
   Widget build(BuildContext context) {
@@ -37,38 +34,27 @@ class _SliverAppBarExampleState extends State<SliverAppBarExample> {
             ),
           ),
           SliverToBoxAdapter(
-            child: Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  LogInB(
-                    name: "Log In",
-                    ctx: context,
-                    tittle: "tittle",
-                    controller: controller,
-                  ),
-                  SignUpB(
-                    name: "Sign Up",
-                    ctx: context,
-                    tittle: "tittle",
-                    controller: controller,
-                  ),
-                ],
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(8.0, 0, 8.0, 0),
+              child: buttonO(
+                name: "Getting Started",
+                ctx: context,
+                controller: controller,
               ),
             ),
           ),
           const SliverToBoxAdapter(
+            ///@TODO: we will add details about app here.
             child: SizedBox(
               height: 550,
             ),
           ),
-          LogIn(),
           const SliverToBoxAdapter(
             child: SizedBox(
               height: 150,
             ),
           ),
-          SignUp(),
+          const RouteSection(),
           const SliverToBoxAdapter(
             child: SizedBox(
               height: 100,

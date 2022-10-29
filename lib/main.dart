@@ -1,3 +1,6 @@
+import 'package:art_exhibition_app/pages/auth/LogIn.dart';
+import 'package:art_exhibition_app/pages/auth/signup.dart';
+import 'package:art_exhibition_app/pages/homePage/homeScreen.dart';
 import 'package:art_exhibition_app/pages/startScreen/StartScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +15,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        'login': (context) => const Login(),
+        'signup': (context) => const Signup(),
+        'home': (context) => const MyHomePage(title: 'Home2'),
+      },
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       color: Colors.black,
