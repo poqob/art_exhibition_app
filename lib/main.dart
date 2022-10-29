@@ -1,6 +1,7 @@
-import 'package:art_exhibition_app/pages/auth/LogIn.dart';
+import 'package:art_exhibition_app/pages/auth/logIn.dart';
 import 'package:art_exhibition_app/pages/auth/signup.dart';
 import 'package:art_exhibition_app/pages/homePage/homeScreen.dart';
+import 'package:art_exhibition_app/pages/settings/settings.dart';
 import 'package:art_exhibition_app/pages/startScreen/StartScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       routes: {
         'login': (context) => const Login(),
         'signup': (context) => const Signup(),
-        'home': (context) => const MyHomePage(title: 'Home2'),
+        'home': (context) => const MyHomePage(title: 'Art Exhibition'),
+        'settings': (context) => const SettingsPage(),
       },
       debugShowCheckedModeBanner: false,
       title: 'Material App',

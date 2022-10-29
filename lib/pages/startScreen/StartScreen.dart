@@ -1,4 +1,3 @@
-import 'package:art_exhibition_app/pages/auth/LogIn.dart';
 import 'package:art_exhibition_app/pages/startScreen/routeSection.dart';
 import 'package:art_exhibition_app/pages/startScreen/appbar/appbar.dart';
 import 'package:art_exhibition_app/pages/startScreen/util/buttonO.dart';
@@ -44,7 +43,8 @@ class _SliverAppBarExampleState extends State<SliverAppBarExample> {
             ),
           ),
           const SliverToBoxAdapter(
-            ///@TODO: we will add details about app here.
+            //@TODO: we will add details about app here.
+            //@TODO: flutter paint class should be searched, may i can draw some shapes borders and fills them in.
             child: SizedBox(
               height: 550,
             ),

@@ -1,4 +1,4 @@
-import 'package:art_exhibition_app/pages/auth/LogIn.dart';
+import 'package:art_exhibition_app/pages/auth/logIn.dart';
 import 'package:art_exhibition_app/pages/auth/signup.dart';
 import 'package:art_exhibition_app/pages/startScreen/util/buttonO.dart';
 import 'package:flutter/material.dart';
@@ -21,11 +21,11 @@ class _RouteSectionState extends State<RouteSection> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            buttonO(name: 'Log In ', ctx: context, page: Login()),
+            buttonO(name: 'Log In ', ctx: context, route: 'login'),
             const SizedBox(
               height: 10,
             ),
-            buttonO(name: 'Sign In', ctx: context, page: Signup()),
+            buttonO(name: 'Sign In', ctx: context, route: 'signup'),
           ],
         ),
       ),

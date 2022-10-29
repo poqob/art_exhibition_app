@@ -7,7 +7,7 @@ Widget buttonO({
   required BuildContext ctx,
   Color color = Colors.white,
   ScrollController? controller,
-  Widget? page,
+  String? route,
 }) {
   return OutlinedButton(
     style: OutlinedButton.styleFrom(
@@ -24,7 +24,7 @@ Widget buttonO({
             duration: const Duration(seconds: 4), curve: Curves.easeIn);
       } catch (e) {}
       try {
-        MaterialPageRoute(builder: (ctx) => page!);
+        Navigator.of(ctx).pushNamed(route!);
       } catch (e) {}
     },
     child: Padding(
