@@ -14,7 +14,7 @@ class _FlowPageState extends State<FlowPage> {
   // bottom bar navigation
   int _currentBottomIndex = 0;
   void _handleIndexChanged(int? index) {
-    String route = "bbr" + index.toString();
+    String route = "bbr$index";
     setState(() {
       _currentBottomIndex = index!;
       index != 0

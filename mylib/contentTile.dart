@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Cards extends StatefulWidget {
-  final Widget widget;
-  const Cards({Key? key, required this.widget}) : super(key: key);
+class ContentTile extends StatefulWidget {
+  final String contentName;
+  const ContentTile({Key? key, this.contentName = ""}) : super(key: key);
 
   @override
-  State<Cards> createState() => CardsState();
+  State<ContentTile> createState() => ContentTileState();
 }
 
-class CardsState extends State<Cards> {
+class ContentTileState extends State<ContentTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,13 +29,8 @@ class CardsState extends State<Cards> {
       ),
       child: Stack(
         children: [
-          SizedBox(
-            child: widget.widget,
-            height: 200,
-            width: 180,
-          ),
           Text(
-            'data',
+            widget.contentName,
             style: GoogleFonts.acme(color: Colors.white),
           )
         ],
