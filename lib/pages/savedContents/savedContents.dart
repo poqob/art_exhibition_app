@@ -2,12 +2,13 @@ import 'dart:ui';
 
 import 'package:art_exhibition_app/consts/consts.dart';
 import 'package:art_exhibition_app/utils/Todo.dart';
-import 'package:art_exhibition_app/utils/Card.dart';
+import 'package:art_exhibition_app/utils/card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 @Todo('''
-saved card contents will get in order here with different vertical sizes as two column.
+query saved item's picture link, leading, text data about them.   //BACKEND
+then create Cardd widgets.                                        //FRONTEND
 ''')
 class SavedContentsPage extends StatefulWidget {
   const SavedContentsPage({Key? key}) : super(key: key);
@@ -26,35 +27,15 @@ class _SavedContentsPageState extends State<SavedContentsPage> {
           onPressed: (() => Navigator.pop(context)),
         ),
       ),
-      body: GridView.count(
-        crossAxisCount: 2,
-        crossAxisSpacing: 10.0,
-        children: [
-          Cardd(
-            color: Colors.redAccent,
-            imgNum: 1,
-          ),
-          Cardd(
-            color: Colors.black26,
-          ),
-          Cardd(
-            color: Colors.red,
-          ),
-          Cardd(
-            color: Colors.green,
-          ),
-          Cardd(
-            color: Colors.white,
-          ),
-          Cardd(
-            color: Colors.pink,
-          ),
-          Cardd(),
-          Cardd(),
-          Cardd(),
-          Cardd(),
-          Cardd(),
-        ],
+      body: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
+          childAspectRatio: 0.8,
+          mainAxisSpacing: 20,
+          crossAxisSpacing: 20,
+        ),
+        itemCount: 18,
+        itemBuilder: (context, index) => Cardd(imgNum: index % 2),
       ),
     );
   }
