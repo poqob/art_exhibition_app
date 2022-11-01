@@ -1,6 +1,4 @@
-import 'package:art_exhibition_app/pages/auth/logIn.dart';
-import 'package:art_exhibition_app/pages/auth/signup.dart';
-import 'package:art_exhibition_app/pages/startScreen/util/buttonO.dart';
+import 'package:art_exhibition_app/pages/startScreen/util/routeButtons.dart';
 import 'package:flutter/material.dart';
 
 class RouteSection extends StatefulWidget {
@@ -21,11 +19,11 @@ class _RouteSectionState extends State<RouteSection> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            buttonO(name: 'Log In ', ctx: context, route: 'login'),
+            routeButtons(name: 'Log In ', ctx: context, route: 'login'),
             const SizedBox(
               height: 10,
             ),
-            buttonO(name: 'Sign In', ctx: context, route: 'signup'),
+            routeButtons(name: 'Sign In', ctx: context, route: 'signup'),
           ],
         ),
       ),

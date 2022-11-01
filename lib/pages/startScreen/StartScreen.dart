@@ -1,6 +1,6 @@
 import 'package:art_exhibition_app/pages/startScreen/routeSection.dart';
 import 'package:art_exhibition_app/pages/startScreen/appbar/appbar.dart';
-import 'package:art_exhibition_app/pages/startScreen/util/buttonO.dart';
+import 'package:art_exhibition_app/pages/startScreen/util/gettingStarted.dart';
 import 'package:flutter/material.dart';
 import 'package:art_exhibition_app/utils/Todo.dart';
 
@@ -35,8 +35,7 @@ class _SliverAppBarExampleState extends State<SliverAppBarExample> {
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(8.0, 0, 8.0, 0),
-              child: buttonO(
-                name: "Getting Started",
+              child: gettingStartedButton(
                 ctx: context,
                 controller: controller,
               ),

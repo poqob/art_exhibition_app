@@ -2,36 +2,31 @@ import 'package:art_exhibition_app/utils/Todo.dart';
 import 'package:flutter/material.dart';
 
 @Todo("page route system will be developed.")
-Widget buttonO({
-  required String name,
+Widget gettingStartedButton({
   required BuildContext ctx,
-  Color color = Colors.white,
   ScrollController? controller,
   String? route,
 }) {
   return OutlinedButton(
     style: OutlinedButton.styleFrom(
-      primary: color,
-      side: BorderSide(
+      primary: Colors.white,
+      side: const BorderSide(
         style: BorderStyle.solid,
         width: 1.6,
-        color: color,
+        color: Colors.white,
       ),
     ),
     onPressed: () {
       try {
         controller!.animateTo(controller.positions.last.maxScrollExtent,
-            duration: const Duration(seconds: 4), curve: Curves.easeIn);
-      } catch (e) {}
-      try {
-        Navigator.of(ctx).pushNamed(route!);
+            duration: const Duration(seconds: 2), curve: Curves.easeIn);
       } catch (e) {}
     },
-    child: Padding(
-      padding: const EdgeInsets.all(10),
+    child: const Padding(
+      padding: EdgeInsets.all(10),
       child: Text(
-        name,
-        style: const TextStyle(fontWeight: FontWeight.w300, fontSize: 22),
+        "Getting Started",
+        style: TextStyle(fontWeight: FontWeight.w300, fontSize: 22),
       ),
     ),
   );

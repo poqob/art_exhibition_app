@@ -1,8 +1,8 @@
-import 'package:art_exhibition_app/pages/startScreen/util/buttonO.dart';
-import 'package:art_exhibition_app/pages/startScreen/util/textFields.dart';
 import 'package:art_exhibition_app/utils/Todo.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+
+import 'form.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -51,16 +51,9 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
               },
             ),
             const Padding(
-              padding: EdgeInsets.fromLTRB(12.0, 0, 12.0, 0),
-              child: TextInput(
-                  hintTextt: 'username please... ', suffixTextt: 'Welcomee'),
+              padding: EdgeInsets.only(left: 15, right: 15),
+              child: LogInForm(),
             ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(12.0, 0, 12.0, 0),
-              child:
-                  TextInput(hintTextt: 'pasword please... ', isObsecure: true),
-            ),
-            buttonO(name: 'Log In', ctx: context, route: "home"),
           ],
         ),
       ),

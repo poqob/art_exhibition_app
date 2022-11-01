@@ -1,5 +1,4 @@
-import 'package:art_exhibition_app/pages/startScreen/util/buttonO.dart';
-import 'package:art_exhibition_app/pages/startScreen/util/textFields.dart';
+import 'package:art_exhibition_app/pages/startScreen/util/routeButtons.dart';
 import 'package:art_exhibition_app/utils/Todo.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -30,31 +29,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
             Lottie.network(
               "https://assets6.lottiefiles.com/packages/lf20_1t8na1gy.json",
             ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(12.0, 10.0, 12.0, 0),
-              child: TextInput(
-                  hintTextt: 'username please... ', suffixTextt: 'Welcomee'),
-            ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(12.0, 0.0, 12.0, 0),
-              child: TextInput(
-                  hintTextt: 'e-mail adress please... ', suffixTextt: ''),
-            ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(12.0, 0.0, 12.0, 0),
-              child: TextInput(hintTextt: 'City... ', suffixTextt: ''),
-            ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(12.0, 0, 12.0, 0),
-              child:
-                  TextInput(hintTextt: 'pasword please... ', isObsecure: true),
-            ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(12.0, 0, 12.0, 0),
-              child:
-                  TextInput(hintTextt: 'repeat pasword ... ', isObsecure: true),
-            ),
-            buttonO(name: 'Sign Up', ctx: context, route: "home"),
+            routeButtons(name: 'Sign Up', ctx: context, route: "home"),
             const SizedBox(
               height: 20,
             )

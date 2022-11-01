@@ -5,6 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "program": "lib/main.dart",
             "name": "art_exhibition_app",
             "request": "launch",
             "type": "dart"

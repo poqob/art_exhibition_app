@@ -1,9 +1,9 @@
-import 'package:art_exhibition_app/pages/auth/logIn.dart';
+import 'package:art_exhibition_app/pages/auth/logIn/logIn.dart';
 import 'package:art_exhibition_app/pages/auth/signup.dart';
 import 'package:art_exhibition_app/pages/homePage/homeScreen.dart';
 import 'package:art_exhibition_app/pages/savedContents/savedContents.dart';
 import 'package:art_exhibition_app/pages/searchContent/search_content_page.dart';
-import 'package:art_exhibition_app/pages/settings/settings.dart';
+import 'package:art_exhibition_app/pages/settings/settingsPage/settings.dart';
 import 'package:art_exhibition_app/pages/startScreen/StartScreen.dart';
 import 'package:flutter/material.dart';
 

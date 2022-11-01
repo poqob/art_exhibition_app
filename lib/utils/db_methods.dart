@@ -2,16 +2,29 @@
 import 'package:postgres/postgres.dart';
 
 class DbMethods with adjectives {
-  Future<String> queries(int queryNum) async {
-    var connection = PostgreSQLConnection("localhost", 5432, "postgres",
-        username: "dart", password: "123456");
-    await connection.open();
+  PostgreSQLConnection connection = PostgreSQLConnection(
+      "localhost", 5432, "postgres",
+      username: "dart", password: "123456");
+  DbMethods() {
+    connection.open();
+  }
 
+  Future<String> queries(int queryNum) async {
     List<List<dynamic>> results = await connection.query('''
   SELECT * FROM demo WHERE id=$queryNum
 ''');
     await connection.close();
     return results[0][1].toString();
+  }
+
+  Future<String> loginAuth(String username) async {
+    List<List<dynamic>> results;
+
+    results = await connection.query('''
+  SELECT _username,_password FROM users WHERE username_id=1
+''');
+
+    return results[0][0];
   }
 }
 
