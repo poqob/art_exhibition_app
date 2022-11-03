@@ -1,10 +1,12 @@
-import 'package:art_exhibition_app/pages/startScreen/util/routeButtons.dart';
+import 'package:art_exhibition_app/pages/auth/signUp/sign_up_form.dart';
 import 'package:art_exhibition_app/utils/Todo.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-@Todo("authotencation will be codded.")
-@Todo("i've better to code back end as quickly as possible")
+@Todo("scaffold will be colored.")
+@Todo("db queries will getting better.")
+@Todo(
+    "progres indicator bar will be added or some soft loading animations like youtube's.")
 class Signup extends StatefulWidget {
   const Signup({Key? key}) : super(key: key);
 
@@ -29,10 +31,13 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
             Lottie.network(
               "https://assets6.lottiefiles.com/packages/lf20_1t8na1gy.json",
             ),
-            routeButtons(name: 'Sign Up', ctx: context, route: "home"),
             const SizedBox(
               height: 20,
-            )
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 15, right: 15),
+              child: SignUpForm(),
+            ),
           ],
         ),
       ),

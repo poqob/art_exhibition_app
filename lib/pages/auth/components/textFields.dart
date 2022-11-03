@@ -1,6 +1,8 @@
 // ignore: file_names
+import 'package:art_exhibition_app/utils/Todo.dart';
 import 'package:flutter/material.dart';
 
+@Todo("text field's validation and acceptable typo type will be coded.")
 class TextInput extends StatefulWidget {
   const TextInput({
     Key? key,
@@ -10,9 +12,11 @@ class TextInput extends StatefulWidget {
     required this.textInputType,
     required this.formKey,
     required this.textEditingController,
+    required this.maxLength,
   }) : super(
           key: key,
         );
+  final int maxLength;
   final GlobalKey formKey;
   final String hintTextt;
   final String suffixTextt;
@@ -29,7 +33,7 @@ class _TextInputState extends State<TextInput> {
     return TextFormField(
       keyboardType: widget.textInputType,
       obscureText: widget.isObsecure,
-      maxLength: 10,
+      maxLength: widget.maxLength,
       cursorWidth: 1.5 * 2,
       cursorRadius: const Radius.circular(3),
       minLines: 1,
@@ -55,7 +59,6 @@ class _TextInputState extends State<TextInput> {
         fillColor: Colors.white,
       ),
       controller: widget.textEditingController,
-      //@TODO: database query will comes up hereee !!!
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'Please enter some text';

@@ -1,4 +1,5 @@
 //queries to database according to index numbers that db has serial.
+import 'package:art_exhibition_app/utils/Todo.dart';
 import 'package:postgres/postgres.dart';
 
 class DbMethods with adjectives {
@@ -17,6 +18,7 @@ class DbMethods with adjectives {
     return results[0][1].toString();
   }
 
+  @Todo("queries will be dynamic not only for id=1")
   Future<String> loginAuthUserName(String username) async {
     List<List<dynamic>> results;
     results = await connection.query('''

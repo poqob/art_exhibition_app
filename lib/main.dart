@@ -1,10 +1,5 @@
-import 'package:art_exhibition_app/pages/auth/logIn/logIn.dart';
-import 'package:art_exhibition_app/pages/auth/signup.dart';
-import 'package:art_exhibition_app/pages/homePage/homeScreen.dart';
-import 'package:art_exhibition_app/pages/savedContents/savedContents.dart';
-import 'package:art_exhibition_app/pages/searchContent/search_content_page.dart';
-import 'package:art_exhibition_app/pages/settings/settingsPage/settings.dart';
 import 'package:art_exhibition_app/pages/startScreen/StartScreen.dart';
+import 'package:art_exhibition_app/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,15 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      routes: {
-        'login': (context) => const Login(),
-        'signup': (context) => const Signup(),
-        'home': (context) => const FlowPage(title: 'Art Exhibition'),
-        'bbr0': (context) => const FlowPage(title: 'Art Exhibition'),
-        'bbr1': (context) => const SearchContentPage(),
-        'bbr2': (context) => const SavedContentsPage(),
-        'bbr3': (context) => const SettingsPage(),
-      },
+      routes: routes,
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       color: Colors.black,

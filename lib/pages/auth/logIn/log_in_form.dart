@@ -1,8 +1,8 @@
-import 'package:art_exhibition_app/pages/startScreen/util/textFields.dart';
+import 'package:art_exhibition_app/pages/auth/components/textFields.dart';
+import 'package:art_exhibition_app/utils/Todo.dart';
 import 'package:art_exhibition_app/utils/db_methods.dart';
 import 'package:flutter/material.dart';
 
-// Define a custom Form widget.
 class LogInForm extends StatefulWidget {
   const LogInForm({super.key});
 
@@ -12,21 +12,14 @@ class LogInForm extends StatefulWidget {
   }
 }
 
-// Define a corresponding State class.
-// This class holds data related to the form.
 class LogInFormState extends State<LogInForm> {
-  // Create a global key that uniquely identifies the Form widget
-  // and allows validation of the form.
-  //
-  // Note: This is a `GlobalKey<FormState>`,
-  // not a GlobalKey<MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
-  TextEditingController _textEditingControllerUserName =
+  final TextEditingController _textEditingControllerUserName =
       TextEditingController();
-  TextEditingController _textEditingControllerPassword =
+  final TextEditingController _textEditingControllerPassword =
       TextEditingController();
   DbMethods db = DbMethods();
-
+  @Todo("i'll coloring scaffold message.")
   @override
   Widget build(BuildContext context) {
     // Build a Form widget using the _formKey created above.
@@ -34,18 +27,22 @@ class LogInFormState extends State<LogInForm> {
       key: _formKey,
       child: Column(
         children: <Widget>[
+          //text inputs
           TextInput(
               textInputType: TextInputType.name,
               formKey: _formKey,
               hintTextt: "username",
+              maxLength: 15,
               textEditingController: _textEditingControllerUserName),
           TextInput(
-            textInputType: TextInputType.text,
+            textInputType: TextInputType.visiblePassword,
             formKey: _formKey,
             hintTextt: "password",
             isObsecure: true,
+            maxLength: 15,
             textEditingController: _textEditingControllerPassword,
           ),
+          //submit button.
           OutlinedButton(
             style: OutlinedButton.styleFrom(
               primary: Colors.white,
@@ -64,8 +61,6 @@ class LogInFormState extends State<LogInForm> {
             ),
             onPressed: () async {
               if (_formKey.currentState!.validate()) {
-                // If the form is valid, display a snackbar. In the real world,
-
                 try {
                   if (_textEditingControllerUserName.text ==
                           await db.loginAuthUserName(
@@ -73,16 +68,24 @@ class LogInFormState extends State<LogInForm> {
                       _textEditingControllerPassword.text ==
                           await db.loginAuthPassword(
                               _textEditingControllerPassword.text)) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('succesfully Logged in'),
+                        duration: Duration(milliseconds: 500),
+                      ),
+                    );
                     Future<void>.delayed(
                       const Duration(seconds: 1),
                       () => Navigator.popAndPushNamed(context, 'home'),
                     );
+                  } else {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Logged in kral')),
+                      const SnackBar(
+                          content: Text('Wrong username or password entry')),
                     );
                   }
+                  // ignore: empty_catches
                 } catch (e) {}
-                // you'd often call a server or save the information in a database.
               }
             },
           )
