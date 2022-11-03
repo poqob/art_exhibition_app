@@ -1,6 +1,4 @@
 // ignore: file_names
-import 'package:art_exhibition_app/utils/Todo.dart';
-import 'package:art_exhibition_app/utils/db_methods.dart';
 import 'package:flutter/material.dart';
 
 class TextInput extends StatefulWidget {
@@ -11,6 +9,7 @@ class TextInput extends StatefulWidget {
     this.isObsecure = false,
     required this.textInputType,
     required this.formKey,
+    required this.textEditingController,
   }) : super(
           key: key,
         );
@@ -19,13 +18,12 @@ class TextInput extends StatefulWidget {
   final String suffixTextt;
   final bool isObsecure;
   final TextInputType textInputType;
+  final TextEditingController textEditingController;
   @override
   State<TextInput> createState() => _TextInputState();
 }
 
 class _TextInputState extends State<TextInput> {
-  DbMethods db = DbMethods();
-
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -56,24 +54,12 @@ class _TextInputState extends State<TextInput> {
         suffixStyle: const TextStyle(color: Colors.white70),
         fillColor: Colors.white,
       ),
+      controller: widget.textEditingController,
       //@TODO: database query will comes up hereee !!!
       validator: (value) {
-        @Todo('how can i pass future object to validator?');
-        print(db.loginAuth(value!));
-
         if (value == null || value.isEmpty) {
           return 'Please enter some text';
         }
-
-        if (value == db.loginAuth(value)) {
-          Future<void>.delayed(
-            const Duration(seconds: 1),
-            () => Navigator.popAndPushNamed(context, 'home'),
-          );
-        } else {
-          return "kullanıcı adı ya da şifre yanlış";
-        }
-
         return null;
       },
     );

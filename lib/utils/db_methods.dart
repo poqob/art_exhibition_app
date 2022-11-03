@@ -17,13 +17,19 @@ class DbMethods with adjectives {
     return results[0][1].toString();
   }
 
-  Future<String> loginAuth(String username) async {
+  Future<String> loginAuthUserName(String username) async {
     List<List<dynamic>> results;
-
     results = await connection.query('''
-  SELECT _username,_password FROM users WHERE username_id=1
+  SELECT _username FROM users WHERE username_id=1
 ''');
+    return results[0][0];
+  }
 
+  Future<String> loginAuthPassword(String username) async {
+    List<List<dynamic>> results;
+    results = await connection.query('''
+  SELECT _password FROM users WHERE username_id=1
+''');
     return results[0][0];
   }
 }

@@ -21,6 +21,11 @@ class LogInFormState extends State<LogInForm> {
   // Note: This is a `GlobalKey<FormState>`,
   // not a GlobalKey<MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
+  TextEditingController _textEditingControllerUserName =
+      TextEditingController();
+  TextEditingController _textEditingControllerPassword =
+      TextEditingController();
+  DbMethods db = DbMethods();
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +37,14 @@ class LogInFormState extends State<LogInForm> {
           TextInput(
               textInputType: TextInputType.name,
               formKey: _formKey,
-              hintTextt: "username"),
+              hintTextt: "username",
+              textEditingController: _textEditingControllerUserName),
           TextInput(
             textInputType: TextInputType.text,
             formKey: _formKey,
             hintTextt: "password",
             isObsecure: true,
+            textEditingController: _textEditingControllerPassword,
           ),
           OutlinedButton(
             style: OutlinedButton.styleFrom(
@@ -55,13 +62,27 @@ class LogInFormState extends State<LogInForm> {
                 style: TextStyle(fontWeight: FontWeight.w300, fontSize: 22),
               ),
             ),
-            onPressed: () {
+            onPressed: () async {
               if (_formKey.currentState!.validate()) {
                 // If the form is valid, display a snackbar. In the real world,
+
+                try {
+                  if (_textEditingControllerUserName.text ==
+                          await db.loginAuthUserName(
+                              _textEditingControllerUserName.text) &&
+                      _textEditingControllerPassword.text ==
+                          await db.loginAuthPassword(
+                              _textEditingControllerPassword.text)) {
+                    Future<void>.delayed(
+                      const Duration(seconds: 1),
+                      () => Navigator.popAndPushNamed(context, 'home'),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Logged in kral')),
+                    );
+                  }
+                } catch (e) {}
                 // you'd often call a server or save the information in a database.
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Logged in kral')),
-                );
               }
             },
           )
