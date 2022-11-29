@@ -1,0 +1,5 @@
+bundan sonra yapılacak olan şey, pgadmin üzerinden veri tabanına ilgili tabloları eklemektir.
+
+---veri tabanına tablo ekleme
+---tablolar arasında ilişki kurmak
+---
