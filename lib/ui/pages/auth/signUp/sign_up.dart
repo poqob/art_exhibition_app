@@ -1,5 +1,5 @@
-import 'package:art_exhibition_app/ui/pages/auth/signUp/sign_up_form.dart';
-import 'package:art_exhibition_app/ui/utils/Todo.dart';
+import 'package:art_exhibition_app/ui/pages/auth/signUp/sign_up_ui.dart';
+import '../../../../utils/Todo.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 

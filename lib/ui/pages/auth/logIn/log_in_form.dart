@@ -1,6 +1,6 @@
 import 'package:art_exhibition_app/ui/pages/auth/components/textFields.dart';
-import 'package:art_exhibition_app/ui/utils/Todo.dart';
-import 'package:art_exhibition_app/ui/utils/db_methods.dart';
+import '../../../../utils/Todo.dart';
+import 'package:art_exhibition_app/db/db_commands/db_methods.dart';
 import 'package:flutter/material.dart';
 
 class LogInForm extends StatefulWidget {
@@ -18,7 +18,7 @@ class LogInFormState extends State<LogInForm> {
       TextEditingController();
   final TextEditingController _textEditingControllerPassword =
       TextEditingController();
-  DbMethods db = DbMethods();
+  DBActions db = DBActions();
   @Todo("i'll coloring scaffold message.")
   @override
   Widget build(BuildContext context) {

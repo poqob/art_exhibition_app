@@ -1,5 +1,6 @@
 import 'package:art_exhibition_app/ui/pages/startScreen/StartScreen.dart';
-import 'package:art_exhibition_app/ui/utils/routes.dart';
+import 'package:art_exhibition_app/utils/routes.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {

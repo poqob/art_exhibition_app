@@ -1,6 +1,8 @@
 // ignore: file_names
-import 'package:art_exhibition_app/ui/utils/Todo.dart';
+
 import 'package:flutter/material.dart';
+
+import '../../../../utils/Todo.dart';
 
 @Todo("text field's validation and acceptable typo type will be coded.")
 class TextInput extends StatefulWidget {

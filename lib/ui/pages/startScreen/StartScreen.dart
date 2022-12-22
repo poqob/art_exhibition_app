@@ -3,7 +3,7 @@ import 'package:art_exhibition_app/ui/pages/startScreen/appbar/appbar.dart';
 import 'package:art_exhibition_app/ui/pages/startScreen/util/gettingStarted.dart';
 
 import 'package:flutter/material.dart';
-import 'package:art_exhibition_app/ui/utils/Todo.dart';
+import '../../../../utils/Todo.dart';
 
 @Todo('''
 random table-statue provider will be coded like api.

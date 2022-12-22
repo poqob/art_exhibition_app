@@ -1,12 +1,12 @@
 //queries to database according to index numbers that db has serial.
-import 'package:art_exhibition_app/ui/utils/Todo.dart';
+import '../../../../utils/Todo.dart';
 import 'package:postgres/postgres.dart';
 
-class DbMethods with adjectives {
+class DBActions {
   PostgreSQLConnection connection = PostgreSQLConnection(
       "localhost", 5432, "postgres",
       username: "dart", password: "123456");
-  DbMethods() {
+  DBActions() {
     connection.open();
   }
 
@@ -35,5 +35,3 @@ class DbMethods with adjectives {
     return results[0][0];
   }
 }
-
-mixin adjectives {}

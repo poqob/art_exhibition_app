@@ -1,6 +1,6 @@
 import 'package:art_exhibition_app/ui/pages/auth/components/textFields.dart';
-import 'package:art_exhibition_app/ui/utils/Todo.dart';
-import 'package:art_exhibition_app/ui/utils/db_methods.dart';
+import '../../../../utils/Todo.dart';
+import 'package:art_exhibition_app/db/db_commands/db_methods.dart';
 import 'package:flutter/material.dart';
 
 @Todo("i'll coloring scaffold message.")
@@ -15,7 +15,7 @@ class SignUpForm extends StatefulWidget {
 }
 
 class SignUpFormState extends State<SignUpForm> {
-  DbMethods db = DbMethods();
+  DBActions db = DBActions();
 
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _textEditingControllerUserName =
