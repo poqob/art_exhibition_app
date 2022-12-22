@@ -1,8 +1,0 @@
-arka plan
-
-veri tabanı -
-
-uygulama arayüzü
-
-animasyonları gömülü yapalım(jsondan çekelim) -
-sayfalar arası yumuşak geçişler -
