@@ -1,12 +1,8 @@
-import 'package:art_exhibition_app/ui/pages/auth/signUp/sign_up_ui.dart';
+import 'package:art_exhibition_app/ui/pages/auth/signUp/sign_up_page.dart';
 import '../../../../utils/Todo.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-@Todo("scaffold will be colored.")
-@Todo("db queries will getting better.")
-@Todo(
-    "progres indicator bar will be added or some soft loading animations like youtube's.")
 class Signup extends StatefulWidget {
   const Signup({Key? key}) : super(key: key);
 
