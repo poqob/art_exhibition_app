@@ -1,4 +1,5 @@
-import 'package:art_exhibition_app/ui/pages/auth/components/textFields.dart';
+import 'package:art_exhibition_app/ui/pages/auth/widgets/textFields.dart';
+
 import '../../../../utils/Todo.dart';
 import 'package:art_exhibition_app/db/db_commands/db_methods.dart';
 import 'package:flutter/material.dart';
