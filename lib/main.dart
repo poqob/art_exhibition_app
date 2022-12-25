@@ -1,4 +1,4 @@
-import 'package:art_exhibition_app/ui/pages/startScreen/StartScreen.dart';
+import 'package:art_exhibition_app/ui/pages/startScreen/StartScreenUi.dart';
 import 'package:art_exhibition_app/utils/routes.dart';
 
 import 'package:flutter/material.dart';

@@ -1,5 +1,1 @@
-bundan sonra yapılacak olan şey, pgadmin üzerinden veri tabanına ilgili tabloları eklemektir.
-
----veri tabanına tablo ekleme
----tablolar arasında ilişki kurmak
----
+uygulamaya girişi doğrulama fonksiyonu veri tabanı fonksiyonu olarak mı kullanılsa ??

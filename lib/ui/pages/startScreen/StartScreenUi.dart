@@ -1,6 +1,6 @@
 import 'package:art_exhibition_app/ui/pages/startScreen/routeSection.dart';
 import 'package:art_exhibition_app/ui/pages/startScreen/appbar/appbar.dart';
-import 'package:art_exhibition_app/ui/pages/startScreen/util/gettingStarted.dart';
+import 'package:art_exhibition_app/ui/pages/startScreen/util/gettingStartedButton.dart';
 
 import 'package:flutter/material.dart';
 import '../../../../utils/Todo.dart';
@@ -46,6 +46,7 @@ class _SliverAppBarExampleState extends State<SliverAppBarExample> {
             //@TODO: we will add details about app here.
             //@TODO: flutter paint class should be searched, may i can draw some shapes borders and fills them in.
             child: SizedBox(
+              child: Text('data'),
               height: 550,
             ),
           ),
