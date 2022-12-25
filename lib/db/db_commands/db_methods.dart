@@ -1,4 +1,6 @@
 //queries to database according to index numbers that db has serial.
+import 'dart:ffi';
+
 import '../../../../utils/Todo.dart';
 import 'package:postgres/postgres.dart';
 
@@ -24,6 +26,16 @@ class DBActions {
     results = await connection.query('''
   SELECT _username FROM users WHERE username_id=1
 ''');
+    return results[0][0];
+  }
+
+//User auth
+  Future<bool> auth(String username, String password) async {
+    var results;
+    results = await connection.query('''
+  SELECT users.auth('$username','$password');
+''');
+    print(results[0][0]);
     return results[0][0];
   }
 

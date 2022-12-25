@@ -62,12 +62,9 @@ class LogInFormState extends State<LogInForm> {
             onPressed: () async {
               if (_formKey.currentState!.validate()) {
                 try {
-                  if (_textEditingControllerUserName.text ==
-                          await db.loginAuthUserName(
-                              _textEditingControllerUserName.text) &&
-                      _textEditingControllerPassword.text ==
-                          await db.loginAuthPassword(
-                              _textEditingControllerPassword.text)) {
+                  if (await db.auth(_textEditingControllerUserName.text,
+                          _textEditingControllerPassword.text) ==
+                      true) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                         content: Text('succesfully Logged in'),
