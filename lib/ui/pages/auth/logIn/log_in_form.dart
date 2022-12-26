@@ -20,6 +20,7 @@ class LogInFormState extends State<LogInForm> {
   final TextEditingController _textEditingControllerPassword =
       TextEditingController();
   DBActions db = DBActions();
+
   @Todo("i'll coloring scaffold message.")
   @override
   Widget build(BuildContext context) {
@@ -65,17 +66,8 @@ class LogInFormState extends State<LogInForm> {
                 try {
                   if (await db.auth(_textEditingControllerUserName.text,
                       _textEditingControllerPassword.text)) {
-                    //true statement
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('succesfully Logged in'),
-                        duration: Duration(milliseconds: 500),
-                      ),
-                    );
-                    Future<void>.delayed(
-                      const Duration(seconds: 1),
-                      () => Navigator.popAndPushNamed(context, 'home'),
-                    );
+                    await messagger(context);
+                    db.closeConn();
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
@@ -91,4 +83,18 @@ class LogInFormState extends State<LogInForm> {
       ),
     );
   }
+}
+
+Future<void> messagger(BuildContext context) async {
+  //true statement
+  ScaffoldMessenger.of(context).showSnackBar(
+    const SnackBar(
+      content: Text('succesfully Logged in'),
+      duration: Duration(milliseconds: 500),
+    ),
+  );
+  Future<void>.delayed(
+    const Duration(seconds: 1),
+    () => Navigator.popAndPushNamed(context, 'home'),
+  );
 }
