@@ -9,5 +9,5 @@ Map<String, Widget Function(BuildContext)> routes = {
   'login': (context) => const Login(),
   'signup': (context) => const Signup(),
   'home': (context) => const HomePage(),
-  'bbr3': (context) => const SettingsPage(),
+  'settings': (context) => const SettingsPage(),
 };
