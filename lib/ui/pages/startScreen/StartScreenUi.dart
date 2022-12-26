@@ -46,7 +46,7 @@ class _SliverAppBarExampleState extends State<SliverAppBarExample> {
             //@TODO: we will add details about app here.
             //@TODO: flutter paint class should be searched, may i can draw some shapes borders and fills them in.
             child: SizedBox(
-              child: Text('data'),
+              child: Text("data"),
               height: 550,
             ),
           ),
