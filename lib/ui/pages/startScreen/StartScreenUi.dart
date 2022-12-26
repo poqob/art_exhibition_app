@@ -11,14 +11,14 @@ Work types:
   1-The art work will be changed in some seconds with soft animation.
   2-Will us provide art works from db??? how it is possible ??
 ''')
-class SliverAppBarExample extends StatefulWidget {
-  const SliverAppBarExample({super.key});
+class StartScreen extends StatefulWidget {
+  const StartScreen({super.key});
 
   @override
-  State<SliverAppBarExample> createState() => _SliverAppBarExampleState();
+  State<StartScreen> createState() => _StartScreenState();
 }
 
-class _SliverAppBarExampleState extends State<SliverAppBarExample> {
+class _StartScreenState extends State<StartScreen> {
   @override
   Widget build(BuildContext context) {
     ScrollController controller = ScrollController();

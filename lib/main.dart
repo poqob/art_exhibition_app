@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 void main() {
   final stopwatch = Stopwatch();
-  print("object1");
   runApp(const MyApp());
   //set online status 1 (db))
   //record login time.  (app-db)
@@ -14,8 +13,6 @@ void main() {
   //firstly we need homescreen to show some posts (app-homepage)
   //then we need options screen to manage user datas (update)
   //we needs triggers (4)
-
-  print("object");
 }
 
 void time(Stopwatch stopwatch) {
@@ -36,7 +33,7 @@ class MyApp extends StatelessWidget {
       title: 'Material App',
       color: Colors.black,
       theme: ThemeData(appBarTheme: const AppBarTheme(color: Colors.black)),
-      home: const SliverAppBarExample(),
+      home: const StartScreen(),
     );
   }
 }

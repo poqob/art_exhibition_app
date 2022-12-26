@@ -64,8 +64,8 @@ class LogInFormState extends State<LogInForm> {
               if (_formKey.currentState!.validate()) {
                 try {
                   if (await db.auth(_textEditingControllerUserName.text,
-                          _textEditingControllerPassword.text) ==
-                      true) {
+                      _textEditingControllerPassword.text)) {
+                    //true statement
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                         content: Text('succesfully Logged in'),
